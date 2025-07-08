@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>❤️ Love Dice ❤️</title>
+<style>
+  body {
+    background: #ffe6e6;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  h1 {
+    color: #ff4d4d;
+  }
+  button {
+    background: #ff4d4d;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #e60000;
+  }
+  #result {
+    margin-top: 30px;
+    font-size: 1.8em;
+    color: #b30000;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>🎲 Love Dice ❤️</h1>
+<button onclick="rollDice()">Roll the Love Dice!</button>
+<div id="result">Let's see what happens...</div>
+
+<audio id="diceSound" src="https://www.myinstants.com/media/sounds/button-10.mp3"></audio>
+
+<script>
+  function rollDice() {
+    const messages = [
+      "💋 Kiss me!",
+      "🤗 Hug me tight!",
+      "😍 Say 'I love you' softly!",
+      "😘 Kiss on the cheek!",
+      "👫 Hold my hand for 10 seconds!",
+      "🧸 Give me a warm cuddle!",
+      "😊 Compliment me sweetly!",
+      "😚 Kiss on the forehead!",
+      "🥰 Tell me why you love me!",
+      "😻 Look into my eyes for 5 seconds!"
+    ];
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("result").innerText = randomMessage;
+    const sound = document.getElementById("diceSound");
+    sound.play();
+  }
+</script>
+
+</body>
+</html>
